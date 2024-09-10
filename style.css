@@ -1,0 +1,585 @@
+:root {
+    --bg-color: #f0f4f8;
+    --text-color: #2d3748;
+    --accent-color: #4299e1;
+    --secondary-color: #63b3ed;
+    --tertiary-color: #ebf8ff;
+    --nav-bg: #f0f4f8;
+    --langages-color: #4299e1;
+    --ide-color: #48bb78;
+    --logiciels-color: #ed8936;
+    --nav-text-color: #2d3748;
+    --social-icon-color: #2d3748; /* Couleur noire pour le thème clair */
+}
+
+.dark-theme {
+    --bg-color: #1a202c;
+    --text-color: #e2e8f0;
+    --accent-color: #4299e1;
+    --secondary-color: #63b3ed;
+    --tertiary-color: #2a4365;
+    --nav-bg: rgba(26, 32, 44, 0.8);
+    --langages-color: #90cdf4;
+    --ide-color: #9ae6b4;
+    --logiciels-color: #fbd38d;
+    --nav-text-color: #e2e8f0;
+    --social-icon-color: #e2e8f0; /* Couleur blanche pour le thème sombre */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+header {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem; /* Réduire le padding horizontal */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ajout de cette ligne */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Permettre aux éléments de passer à la ligne si nécessaire */
+}
+
+nav ul li {
+    margin: 0 0.5rem; /* Réduire la marge entre les éléments de navigation */
+}
+
+nav ul li a {
+    color: var(--nav-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+#theme-toggle {
+    background: none;
+    border: 2px solid var(--nav-text-color);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--nav-text-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 30px; /* Réduire la taille du bouton */
+    height: 30px; /* Réduire la taille du bouton */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px; /* Réduire le padding */
+    margin-left: 0; /* Suppression de la marge à gauche */
+    position: absolute;
+    top: 50%;
+    right: 1rem; /* Ajuster la position du bouton */
+    transform: translateY(-50%);
+}
+
+#theme-toggle:hover {
+    transform: rotate(180deg);
+    background-color: var(--nav-text-color);
+    color: var(--bg-color);
+}
+
+.theme-icon {
+    width: 18px; /* Réduire la taille de l'icône */
+    height: 18px; /* Réduire la taille de l'icône */
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1rem 2rem; /* Réduire le padding horizontal */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+h1, h2 {
+    color: var(--accent-color);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.skills-container, .software-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill, .software {
+    background-color: var(--tertiary-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.skill:hover, .software:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-toggle.clicked {
+    animation: clickEffect 0.3s ease;
+}
+
+@keyframes clickEffect {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* Ajouter des styles pour les petits écrans */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 4rem; /* Augmenter l'espace à droite pour le bouton */
+    }
+
+    nav ul {
+        margin-top: 0.5rem;
+        flex-direction: column; /* Empiler les liens de navigation sur les petits écrans */
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Ajouter de l'espace vertical entre les liens */
+    }
+
+    #theme-toggle {
+        top: 0.5rem;
+        transform: none; /* Réinitialiser la transformation */
+        right: 1rem; /* Ajuster la position du bouton */
+    }
+}
+
+/* Ajoutez ceci à la fin de votre fichier CSS */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    width: 400px;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translate(-50%, -50%);
+}
+
+#modal-close {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+#modal-close:hover {
+    background-color: var(--secondary-color);
+}
+
+#modal-rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin: 0 0.2rem;
+}
+
+.skill, .software {
+    cursor: pointer;
+}
+
+.category-section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.langages {
+    background-color: rgba(66, 153, 225, 0.1);
+}
+
+.ide {
+    background-color: rgba(72, 187, 120, 0.1);
+}
+
+.logiciels {
+    background-color: rgba(237, 137, 54, 0.1);
+}
+
+.langages h2 {
+    color: var(--langages-color);
+}
+
+.ide h2 {
+    color: var(--ide-color);
+}
+
+.logiciels h2 {
+    color: var(--logiciels-color);
+}
+
+.langages .skill {
+    background-color: var(--langages-color);
+    color: var(--bg-color);
+}
+
+.ide .software {
+    background-color: var(--ide-color);
+    color: var(--bg-color);
+}
+
+.logiciels .software {
+    background-color: var(--logiciels-color);
+    color: var(--bg-color);
+}
+
+/* Ajoutez ces styles à la fin de votre fichier CSS */
+
+.modal-content.langage {
+    background-color: var(--langages-color);
+    color: var(--bg-color);
+}
+
+.modal-content.ide {
+    background-color: var(--ide-color);
+    color: var(--bg-color);
+}
+
+.modal-content.logiciel {
+    background-color: var(--logiciels-color);
+    color: var(--bg-color);
+}
+
+/* Ajustez la couleur du bouton de fermeture pour chaque type de modal */
+.modal-content.langage #modal-close,
+.modal-content.ide #modal-close,
+.modal-content.logiciel #modal-close {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.modal-content.langage #modal-close:hover,
+.modal-content.ide #modal-close:hover,
+.modal-content.logiciel #modal-close:hover {
+    opacity: 0.8;
+}
+
+
+.modal-content.langage .star,
+.modal-content.ide .star,
+.modal-content.logiciel .star {
+    color: var(--bg-color);
+}
+
+.source-button {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.source-button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+#modal-rating, #modal-usage {
+    margin-bottom: 0.5rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modal-content > * {
+    margin-bottom: 0.5rem;
+}
+
+.modal-content > *:last-child {
+    margin-bottom: 0;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligner les éléments à gauche */
+    margin-bottom: 1rem;
+}
+
+.source-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: transparent; /* Fond transparent */
+    margin-left: 10px; /* Espace entre le titre et l'icône */
+    transition: transform 0.3s ease; /* Transition pour l'effet de grossissement */
+}
+
+.svg-inline--fa {
+    width: 20px;
+    height: 20px;
+    color: #4CAF50; /* Couleur verte */
+}
+
+.source-link:hover {
+    transform: scale(1.2); /* Grossissement au survol */
+}
+
+.modal-content.langage .source-link,
+.modal-content.ide .source-link,
+.modal-content.logiciel .source-link {
+    background-color: transparent; /* Fond transparent pour tous les types de modal */
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7); /* Blanc semi-transparent */
+    transition: color 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.modal-close::before,
+.modal-close::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: currentColor;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+.modal-close:hover {
+    color: #ff0000; /* Rouge */
+}
+
+.modal-content.langage .modal-close,
+.modal-content.ide .modal-close,
+.modal-content.logiciel .modal-close {
+    color: rgba(255, 255, 255, 0.7); /* Blanc semi-transparent pour tous les types de modal */
+}
+
+.modal-content.langage .modal-close:hover,
+.modal-content.ide .modal-close:hover,
+.modal-content.logiciel .modal-close:hover {
+    color: #ff0000; /* Rouge au survol pour tous les types de modal */
+}
+
+.social-links {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--tertiary-color);
+    border-radius: 25px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.svg-inline--fa {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    color: var(--social-icon-color);
+    transition: color 0.3s ease;
+}
+
+.social-link span {
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.social-link:hover span {
+    color: var(--bg-color);
+}
+
+/* Couleurs spécifiques pour chaque réseau social au survol */
+.social-link:hover .fa-github {
+    color: #ffffff;
+}
+
+.social-link:hover .fa-youtube {
+    color: #ff0000;
+}
+
+.social-link:hover .fa-discord {
+    color: #7289da;
+}
+
+.green-skill {
+    background-color: #4CAF50;
+    color: white;
+}
