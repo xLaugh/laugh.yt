@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'langage',
             description: 'Langage de programmation orienté objet utilisé pour développer des applications robustes et portables.',
             year: 2019,
-            rating: 4,
+            rating: 3,
             usage: "Développement via l'api Spigot pour les serveurs Minecraft",
             source: 'https://www.java.com/'
         },
