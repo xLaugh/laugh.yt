@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'langage',
             description: 'Langage de script léger et embarquable, souvent utilisé dans le développement de jeux.',
             year: 2021,
-            rating: 2,
+            rating: 3,
             usage: "Développement de script pour des serveurs FiveM",
             source: 'https://www.lua.org/'
         },
