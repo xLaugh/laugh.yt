@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'langage',
             description: 'Langage de programmation principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP.',
             year: 2022,
-            rating: 3,
+            rating: 2,
             usage: "Développement de sites web dynamiques et gestion de bases de données",
             source: 'https://www.php.net/'
         },
