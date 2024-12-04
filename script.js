@@ -119,6 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
             usage: "Développement de script pour des serveurs FiveM",
             source: 'https://www.lua.org/'
         },
+		'Python': {
+			type: 'langage',
+			description: 'Langage de programmation polyvalent et puissant, très populaire pour l\'automatisation et la création de bots Discord.',
+			year: 2022,
+			rating: 2,
+			usage: 'Développement de bots Discord',
+			source: 'https://www.python.org/'
+		},
         'Visual Studio Code': {
             type: 'IDE',
             description: 'Éditeur de code source gratuit et puissant développé par Microsoft, offrant de nombreuses fonctionnalités pour faciliter le développement logiciel.',
@@ -217,14 +225,62 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    function openModal(skill) {
-        console.log('Opening modal for:', skill);
-        const data = skillsData[skill];
-        modalTitle.textContent = skill;
-        modalDescription.textContent = `${data.type.charAt(0).toUpperCase() + data.type.slice(1)} : ${data.description}`;
-        modalYear.textContent = `Année de début : ${data.year}`;
-        modalRating.innerHTML = `Maîtrise : ${'★'.repeat(data.rating)}${'☆'.repeat(5 - data.rating)}`;
-        modalUsage.textContent = `Utilisation : ${data.usage || 'Non spécifié'}`;
+    const projectsData = {
+        'Pourcentage': {
+            type: 'Projet',
+            description: 'Serveur Roleplay sur FiveM.',
+            year: 2024,
+            langage: 'Lua, JavaScript, HTML, CSS, SQL',
+            source: 'https://pourcentagerp.fr'
+        },
+        'JeffWars': {
+            type: 'Projet',
+            description: 'Création du site web de Jeffwars, un serveur Minecraft Mini-Jeux.',
+            year: 2022,
+            langage: 'HTML, CSS, JavaScript',
+            source: 'https://jeffwars.net'
+        },
+        'Link': {
+            type: 'Projet',
+            description: "Création d'un site web pour regrouper mes réseaux sociaux",
+            year: 2024,
+            langage: 'HTML, CSS, JavaScript',
+            source: 'https://link.laugh.yt'
+        },
+        'Clicker': {
+            type: 'Projet',
+            description: "Création d'un jeu clicker en web.",
+            year: 2024,
+            langage: 'PHP, HTML, CSS, JavaScript, SQL',
+            source: 'https://github.com/xLaugh/Clicker-Games-Web'
+        },
+        'MDT': {
+            type: 'Projet',
+            description: "Création d'un site MDT (mobile data terminal) pour les policiers de mon serveur Pourcentage.",
+            year: 2024,
+            langage: 'PHP, HTML, CSS, JavaScript, SQL',
+        },
+        'lfTerritory': {
+            type: 'Projet',
+            description: "Création d'un script FiveM pour dynamiser l'ilélgal sur mon serveur Pourcentage. Ajoutant ainsi des territoires, un système de ventes de drogues et de revendication. Disponible ensuite à la vente pour tous.",
+            year: 2024,
+            langage: 'Lua, SQL',
+            source: 'https://youtu.be/cZ7pj1_O3RY'
+        }
+    };
+
+    function openModal(itemName) {
+        console.log('Opening modal for:', itemName);
+        const data = skillsData[itemName] || projectsData[itemName];
+        modalTitle.textContent = itemName;
+        modalDescription.textContent = `${data.type} : ${data.description}`;
+        modalYear.textContent = `Année de commencement : ${data.year}`;
+        
+        if (data.langage) {
+            modalRating.textContent = `Langage : ${data.langage}`;
+        } else {
+            modalRating.innerHTML = `Maîtrise : ${'★'.repeat(data.rating)}${'☆'.repeat(5 - data.rating)}`;
+        }
         
         if (data.source) {
             modalSource.href = data.source;
@@ -250,5 +306,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modal-close').addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
+    });
+
+    document.querySelectorAll('.project').forEach(item => {
+        item.addEventListener('click', () => openModal(item.dataset.project));
+    });
+
+    document.querySelectorAll('.project-wrapper').forEach(wrapper => {
+        wrapper.addEventListener('click', (e) => {
+            if (!e.target.closest('a')) {
+                const projectTitle = wrapper.querySelector('.project-title').textContent;
+                openModal(projectTitle);
+            }
+        });
     });
 });
