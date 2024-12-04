@@ -10,6 +10,7 @@
     --logiciels-color: #ed8936;
     --nav-text-color: #2d3748;
     --social-icon-color: #2d3748;
+    --projects-color: #e53e3e;
 }
 
 .dark-theme {
@@ -24,6 +25,7 @@
     --logiciels-color: #fbd38d;
     --nav-text-color: #e2e8f0;
     --social-icon-color: #e2e8f0;
+    --projects-color: #fc8181;
 }
 
 body {
@@ -577,4 +579,118 @@ footer {
 .green-skill {
     background-color: #4CAF50;
     color: white;
+}
+
+.projects {
+    background-color: rgba(229, 62, 62, 0.1);
+}
+
+.projects h2 {
+    color: var(--projects-color);
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project {
+    background-color: var(--projects-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.project:hover {
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
+
+.modal-content.projet {
+    background-color: var(--projects-color);
+    color: var(--bg-color);
+}
+
+.modal-content.projet #modal-close,
+.modal-content.projet .source-button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.modal-content.projet #modal-close:hover,
+.modal-content.projet .source-button:hover {
+    opacity: 0.8;
+}
+
+.modal-content.projet .star {
+    color: var(--bg-color);
+}
+
+.project-wrapper {
+    text-align: center;
+    margin: 1rem;
+    position: relative;
+    cursor: help;
+}
+
+.project-wrapper:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background-color: var(--projects-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.project-title {
+    color: var(--projects-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.bi-link-45deg {
+    color: #4CAF50;  /* Vert */
+    font-size: 24px;
+}
+
+.source-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.source-link:hover {
+    transform: scale(1.2);
 }
