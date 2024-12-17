@@ -240,33 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
             langage: 'HTML, CSS, JavaScript',
             source: 'https://jeffwars.net'
         },
-        'Link': {
-            type: 'Projet',
-            description: "Création d'un site web pour regrouper mes réseaux sociaux",
-            year: 2024,
-            langage: 'HTML, CSS, JavaScript',
-            source: 'https://link.laugh.yt'
-        },
-        'Clicker': {
-            type: 'Projet',
-            description: "Création d'un jeu clicker en web.",
-            year: 2024,
-            langage: 'PHP, HTML, CSS, JavaScript, SQL',
-            source: 'https://github.com/xLaugh/Clicker-Games-Web'
-        },
-        'MDT': {
-            type: 'Projet',
-            description: "Création d'un site MDT (mobile data terminal) pour les policiers de mon serveur Pourcentage.",
-            year: 2024,
-            langage: 'PHP, HTML, CSS, JavaScript, SQL',
-        },
-        'lfTerritory': {
-            type: 'Projet',
-            description: "Création d'un script FiveM pour dynamiser l'ilélgal sur mon serveur Pourcentage. Ajoutant ainsi des territoires, un système de ventes de drogues et de revendication. Disponible ensuite à la vente pour tous.",
-            year: 2024,
-            langage: 'Lua, SQL',
-            source: 'https://youtu.be/cZ7pj1_O3RY'
-        }
     };
 
     function openModal(itemName) {
