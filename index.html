@@ -1,130 +1,451 @@
 <!DOCTYPE html>
-<html lang="fr" class="dark-theme">
+<html lang="fr" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laugh - Développeur Web</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        light: {
+                            bg: '#ffffff',
+                            text: '#000000',
+                            accent: '#4a5568'
+                        },
+                        dark: {
+                            bg: '#1a202c',
+                            text: '#ffffff',
+                            accent: '#a0aec0'
+                        }
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'scale': 'scale 0.3s ease-in-out'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scale: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#langages">Langages</a></li>
-				<li><a href="#ide">IDE</a></li>
-                <li><a href="#logiciels">Logiciels</a></li>
-                <li><a href="#projects">Mes projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Changer de thème">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="theme-icon">
-                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
-            </svg>
-        </button>
+<body class="font-poppins bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                    Laugh
+                </div>
+                
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#langages" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Langages</a></li>
+                    <li><a href="#ide" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">IDE</a></li>
+                    <li><a href="#logiciels" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Logiciels</a></li>
+                    <li><a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Projets</a></li>
+                    <li><a href="#frameworks" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Frameworks</a></li>
+                    <li><a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Contact</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
+                    <i class="ri-moon-line text-xl hidden dark:block"></i>
+                    <i class="ri-sun-line text-xl block dark:hidden"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="accueil" class="hero">
-            <h1>Laugh</h1>
-            <p class="subtitle">Développeur Web</p>
-            <div class="social-links">
-                <a href="https://github.com/xLaugh" target="_blank" class="social-link">
-                    <svg class="svg-inline--fa fa-github" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
-                    </svg>
-                    <span>xLaugh</span>
+    <main class="pt-16">
+        <section id="hero" class="min-h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+            <div class="container mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-fade-in-up">
+                    Développeur Web
+                </h1>
+                <p class="text-xl mb-12 text-gray-600 dark:text-gray-400 animate-fade-in-up" style="animation-delay: 0.2s">
+                    Passionné par la création d'expériences web innovantes
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
+                    <a href="https://github.com/xLaugh" target="_blank" 
+                       class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+                        <i class="ri-github-fill text-xl"></i>
+                        <span>xLaugh</span>
+                    </a>
+                    <a href="https://www.youtube.com/@thatlaugh" target="_blank"
+                       class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+                        <i class="ri-youtube-fill text-xl text-red-500"></i>
+                        <span>thatlaugh</span>
+                    </a>
+                    <a href="https://discord.gg/6wdkx6X" target="_blank"
+                       class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
+                        <i class="ri-discord-fill text-xl text-indigo-500"></i>
+                        <span>L'Entrepôt</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="langages" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Langages de programmation</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-html5-fill text-4xl text-orange-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">HTML</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
+                    </a>
+
+                    <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-css3-fill text-4xl text-blue-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">CSS</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
+                    </a>
+
+                    <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-javascript-fill text-4xl text-yellow-400"></i>
+                        <h3 class="text-lg font-semibold mt-2">JavaScript</h3>
+                        <div class="text-yellow-500 mt-1">★★☆☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
+                    </a>
+
+                    <a href="https://www.php.net" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-code-s-slash-fill text-4xl text-purple-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">PHP</h3>
+                        <div class="text-yellow-500 mt-1">★★☆☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
+                    </a>
+
+                    <a href="https://sql.sh" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-database-2-fill text-4xl text-blue-600"></i>
+                        <h3 class="text-lg font-semibold mt-2">SQL</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
+                    </a>
+
+                    <a href="https://www.java.com" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-code-box-fill text-4xl text-red-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Java</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
+                    </a>
+
+                    <a href="https://www.lua.org" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-code-fill text-4xl text-blue-400"></i>
+                        <h3 class="text-lg font-semibold mt-2">Lua</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
+                    </a>
+
+                    <a href="https://www.python.org" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-python-fill text-4xl text-green-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Python</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ide" class="py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">IDE</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" 
+                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-visual-studio-line text-4xl text-blue-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Visual Studio Code</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
+                    </a>
+
+                    <a href="https://www.eclipse.org" target="_blank" rel="noopener noreferrer" 
+                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-code-box-line text-4xl text-purple-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Eclipse</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
+                    </a>
+
+                    <a href="https://vscodium.com" target="_blank" rel="noopener noreferrer" 
+                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-code-line text-4xl text-blue-400"></i>
+                        <h3 class="text-lg font-semibold mt-2">VSCodium</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
+                    </a>
+
+                    <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" 
+                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-cursor-fill text-4xl text-green-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Cursor</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
+                    </a>
+
+                    <a href="https://github.com/atom/atom" target="_blank" rel="noopener noreferrer" 
+                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-atom-fill text-4xl text-green-400"></i>
+                        <h3 class="text-lg font-semibold mt-2">Atom</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
+                    </a>
+
+                    <a href="https://www.sublimetext.com" target="_blank" rel="noopener noreferrer" 
+                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-edit-2-fill text-4xl text-orange-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Sublime Text</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="logiciels" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Logiciels</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <a href="https://notepad-plus-plus.org" target="_blank" rel="noopener noreferrer" 
+                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-file-edit-fill text-4xl text-green-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Notepad++</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
+                    </a>
+
+                    <a href="https://www.vegascreativesoftware.com" target="_blank" rel="noopener noreferrer" 
+                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-movie-fill text-4xl text-blue-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Sony Vegas</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
+                    </a>
+
+                    <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer" 
+                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-photoshop-fill text-4xl text-blue-600"></i>
+                        <h3 class="text-lg font-semibold mt-2">Photoshop</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2016</div>
+                    </a>
+
+                    <a href="https://www.office.com" target="_blank" rel="noopener noreferrer" 
+                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-file-word-fill text-4xl text-blue-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Suite Office</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
+                    </a>
+
+                    <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer" 
+                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-paint-fill text-4xl text-purple-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Canva</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
+                    </a>
+
+                    <a href="https://www.phpmyadmin.net" target="_blank" rel="noopener noreferrer" 
+                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-database-fill text-4xl text-orange-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">PhpMyAdmin</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="frameworks" class="py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Frameworks & Technologies</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-wind-line text-4xl text-cyan-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Tailwind CSS</h3>
+                        <div class="text-yellow-500 mt-1">★★★★☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
+                    </a>
+
+                    <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-bootstrap-fill text-4xl text-purple-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Bootstrap</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
+                    </a>
+
+                    <a href="https://discord.js.org" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-discord-fill text-4xl text-indigo-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Discord Bot</h3>
+                        <div class="text-yellow-500 mt-1">★★★★★</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
+                    </a>
+
+                    <a href="https://core.telegram.org/bots/api" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-telegram-fill text-4xl text-blue-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Telegram Bot</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
+                    </a>
+
+                    <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-nodejs-line text-4xl text-green-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Node.js</h3>
+                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
+                    </a>
+
+                    <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-docker-fill text-4xl text-blue-600"></i>
+                        <h3 class="text-lg font-semibold mt-2">Docker</h3>
+                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
+                    </a>
+
+                    <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-reactjs-line text-4xl text-blue-400"></i>
+                        <h3 class="text-lg font-semibold mt-2">React</h3>
+                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
+                    </a>
+
+                    <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" 
+                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
+                        <i class="ri-vuejs-fill text-4xl text-green-500"></i>
+                        <h3 class="text-lg font-semibold mt-2">Vue.js</h3>
+                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-12 text-center">Mes Projets</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="https://pourcentagerp.fr" target="_blank" rel="noopener noreferrer" 
+                       class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 transition-all duration-300 hover:shadow-lg">
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Pourcentage</h3>
+                                <i class="ri-arrow-right-up-line text-gray-400 dark:text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Serveur Roleplay sur FiveM</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JavaScript</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">SQL</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/5 dark:to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </a>
+
+                    <a href="https://jeffwars.net" target="_blank" rel="noopener noreferrer" 
+                       class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 transition-all duration-300 hover:shadow-lg">
+                        <div class="relative z-10">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">JeffWars</h3>
+                                <i class="ri-arrow-right-up-line text-gray-400 dark:text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">Site Web réaliser pour JeffWars</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/5 dark:to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 px-4 bg-white dark:bg-gray-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-center">Contact</h2>
+                <p class="text-xl mb-8 text-gray-600 dark:text-gray-400">Prêt à collaborer sur votre prochain projet ?</p>
+                <a href="https://discord.gg/6wdkx6X" 
+                class="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-all duration-300 transform hover:scale-105">
+                    Me contacter
                 </a>
-                <a href="https://www.youtube.com/@thatlaugh" target="_blank" class="social-link">
-                    <svg class="svg-inline--fa fa-youtube" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                        <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
-                    </svg>
-                    <span>thatlaugh</span>
-                </a>
-                <a href="https://discord.gg/6wdkx6X" target="_blank" class="social-link">
-                    <svg class="svg-inline--fa fa-discord" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                        <path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path>
-                    </svg>
-                    <span>L'Entrepôt</span>
-                </a>
             </div>
-        </section>
-
-        <section id="langages" class="category-section langages">
-            <h2>Langages de programmation</h2>
-            <div class="skills-container">
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">PHP</div>
-                <div class="skill">Java</div>
-                <div class="skill">SQL</div>
-                <div class="skill">Lua</div>
-				<div class="skill">Python</div>
-            </div>
-        </section>
-
-        <section id="ide" class="category-section ide">
-            <h2>IDE</h2>
-            <div class="software-container">
-                <div class="software">Visual Studio Code</div>
-                <div class="software">Eclipse</div>
-                <div class="software">VSCodium</div>
-                <div class="software">Cursor</div>
-                <div class="software">Atom</div>
-                <div class="software">Sublime Text</div>
-            </div>
-        </section>
-
-        <section id="logiciels" class="category-section logiciels">
-            <h2>Logiciels</h2>
-            <div class="software-container">
-                <div class="software">Notepad++</div>
-                <div class="software">Sony Vegas</div>
-                <div class="software">Photoshop</div>
-                <div class="software">Suite Office</div>
-                <div class="software">Canva</div>
-                <div class="software">PhpMyAdmin</div>
-            </div>
-        </section>
-
-        <section id="projects" class="category-section projects">
-            <h2>Mes projets</h2>
-            <div class="projects-container">
-                <div class="project" data-project="Pourcentage">Pourcentage</div>
-                <div class="project" data-project="JeffWars">JeffWars</div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Prêt à collaborer sur votre prochain projet ?</p>
-            <a href="https://discord.gg/6wdkx6X" class="cta-button">Me contacter</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Laugh. Tous droits réservés.</p>
+    <footer class="py-8 px-4 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                    Laugh
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://github.com/xLaugh/" target="_blank" rel="noopener noreferrer" 
+                       class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                        <i class="ri-github-fill text-xl"></i>
+                    </a>
+                    <a href="https://discord.gg/6wdkx6X" target="_blank" rel="noopener noreferrer" 
+                       class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">
+                        <i class="ri-discord-fill text-xl"></i>
+                    </a>
+                </div>
+
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    &copy; 2024-2025 Laugh. Tous droits réservés.
+                </p>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
-
-    <div id="modal-overlay" class="modal-overlay">
-        <div id="modal-content" class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-title"></h3>
-                <a id="modal-source" target="_blank" rel="noopener noreferrer" class="source-link">
-                    <i class="bi bi-link-45deg"></i>
-                </a>
-                <button id="modal-close" class="modal-close"></button>
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-start mb-4">
+                <h3 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white"></h3>
+                <button id="modal-close" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
             </div>
-            <p id="modal-description"></p>
-            <p id="modal-year"></p>
-            <p id="modal-rating"></p>
-            <p id="modal-usage"></p>
+            <div id="modal-content" class="text-gray-700 dark:text-gray-300"></div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
