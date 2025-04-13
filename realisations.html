@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Réalisations - Laugh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        light: {
+                            bg: '#ffffff',
+                            text: '#000000',
+                            accent: '#4a5568'
+                        },
+                        dark: {
+                            bg: '#1a202c',
+                            text: '#ffffff',
+                            accent: '#a0aec0'
+                        }
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'scale': 'scale 0.3s ease-in-out'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scale: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="theme.js"></script>
+</head>
+<body class="font-poppins bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                    Laugh
+                </a>
+                
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html#langages" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Langages</a></li>
+                    <li><a href="index.html#ide" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">IDE</a></li>
+                    <li><a href="index.html#logiciels" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Logiciels</a></li>
+                    <li><a href="index.html#frameworks" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Frameworks</a></li>
+                    <li><a href="realisations.html" class="text-blue-500 dark:text-blue-400">Réalisations</a></li>
+                </ul>
+
+                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
+                    <i class="ri-moon-line text-xl hidden dark:block"></i>
+                    <i class="ri-sun-line text-xl block dark:hidden"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section class="py-16 px-4 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-fade-in-up">
+                    Mes Réalisations
+                </h1>
+                <p class="text-lg mb-8 text-gray-600 dark:text-gray-400 animate-fade-in-up" style="animation-delay: 0.2s">
+                    Découvrez les projets sur lesquels j'ai travaillé
+                </p>
+                
+                <!-- Navigation des catégories -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in-up" style="animation-delay: 0.3s">
+                    <a href="#web" class="px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors">
+                        <i class="ri-global-line mr-1"></i>Développement Web
+                    </a>
+                    <a href="#gaming" class="px-4 py-2 rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 hover:bg-green-200 dark:hover:bg-green-800 transition-colors">
+                        <i class="ri-gamepad-line mr-1"></i>Gaming
+                    </a>
+                    <a href="#bots" class="px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 hover:bg-purple-200 dark:hover:bg-purple-800 transition-colors">
+                        <i class="ri-robot-line mr-1"></i>Bots & Automatisation
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Développement Web -->
+        <section id="web" class="py-16 px-4 bg-white dark:bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-2 text-center">
+                    <i class="ri-global-line text-blue-500 mr-2"></i>Développement Web
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-8 text-center text-lg">Sites et applications web</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- JeffWars -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('jeffwars')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-code-box-line text-4xl text-gray-400 dark:text-gray-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-md">
+                                Site Web
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">JeffWars</h3>
+                                <a href="https://jeffwars.net" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2023 • Développeur Web
+                            </div>
+                            <div class="mt-2 text-xs text-blue-500 group-hover:text-blue-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Link.laugh.yt -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('linklaugh')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-links-line text-4xl text-blue-400 dark:text-blue-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-md">
+                                Site Web
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Link.laugh.yt</h3>
+                                <a href="https://link.laugh.yt" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024-2025 • Développeur Web
+                            </div>
+                            <div class="mt-2 text-xs text-blue-500 group-hover:text-blue-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- BipBipFood28 -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('bipbipfood')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-smartphone-line text-4xl text-orange-400 dark:text-orange-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-md">
+                                Application Mobile
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">BipBipFood28</h3>
+                                <a href="https://github.com/xLaugh/BipBipFood28" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024 • Développeur Web
+                            </div>
+                            <div class="mt-2 text-xs text-blue-500 group-hover:text-blue-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pourcentage MDT -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('pourcentage-mdt')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-police-car-fill text-4xl text-blue-400 dark:text-blue-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-blue-500 text-white text-xs rounded-md">
+                                Application Web
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Pourcentage MDT</h3>
+                                <a href="img/1.png" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">PHP</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-cyan-100/80 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-200">Tailwind</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024-<span class="text-blue-500 dark:text-blue-400">Projet actif</span> • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-blue-500 group-hover:text-blue-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Gaming -->
+        <section id="gaming" class="py-16 px-4 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-2 text-center">
+                    <i class="ri-gamepad-line text-green-500 mr-2"></i>Gaming
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-8 text-center text-lg">Serveurs et projets liés aux jeux vidéo</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Pourcentage Roleplay -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('pourcentage')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-game-fill text-4xl text-gray-400 dark:text-gray-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Serveur Jeu
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Pourcentage RP</h3>
+                                <a href="https://pourcentagerp.fr" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">SQL</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024-<span class="text-green-500 dark:text-green-400">Projet actif</span> • Admin/Dev
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- LfTerritory -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('lfterritory')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-map-pin-fill text-4xl text-red-400 dark:text-red-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Script FiveM
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">LfTerritory</h3>
+                                <a href="https://youtu.be/UisdqecmBA4?si=iCoI9jhSENdcGzAB" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-youtube-fill"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">SQL</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">ESX</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024 • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CookedCraft -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('cookedcraft')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-restaurant-line text-4xl text-amber-400 dark:text-amber-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Serveur Minecraft
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">CookedCraft</h3>
+                                <a href="https://findyourdev.fr/" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">Java</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">SQL</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200">Spigot</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2025-<span class="text-green-500 dark:text-green-400">Projet actif</span> • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- lckHUDplus -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('lckhudplus')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-dashboard-3-line text-4xl text-cyan-400 dark:text-cyan-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Script FiveM
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">lckHUDplus</h3>
+                                <a href="https://github.com/xLaugh/lckHUDplus" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024 • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- LaughFightClub -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('laughfightclub')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-boxing-fill text-4xl text-red-400 dark:text-red-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Script FiveM
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">LaughFightClub</h3>
+                                <a href="https://github.com/xLaugh/LaughFightClub" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024 • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Jump Minecraft -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('jump')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-jump-2-line text-4xl text-emerald-400 dark:text-emerald-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Plugin Minecraft
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Jump</h3>
+                                <a href="https://github.com/xLaugh/Jump" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-github-fill"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">Java</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200">Spigot</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2023 • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SimplyPvPSoup -->
+                    <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('simplepvpsoup')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-bowl-fill text-4xl text-red-400 dark:text-red-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-green-500 text-white text-xs rounded-md">
+                                Plugin Minecraft
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">SimplyPvPSoup</h3>
+                                <a href="https://www.spigotmc.org/resources/simplypvpsoup-%E2%9C%85alpha.112318/" target="_blank" class="text-green-500 hover:text-green-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">Java</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200">Spigot</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2020-2024 • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-green-500 group-hover:text-green-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Bots & Automatisation -->
+        <section id="bots" class="py-16 px-4 bg-white dark:bg-gray-900">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-2 text-center">
+                    <i class="ri-robot-line text-purple-500 mr-2"></i>Bots & Automatisation
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-8 text-center text-lg">Bots Discord, scripts et outils d'automatisation</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Bot Discord L'Entrepôt -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('entrepot-bot')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-discord-fill text-4xl text-indigo-400 dark:text-indigo-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-purple-500 text-white text-xs rounded-md">
+                                Bot Discord
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">L'Entrepôt</h3>
+                                <a href="https://discord.gg/6wdkx6X" target="_blank" class="text-purple-500 hover:text-purple-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">Python</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-200">Discord.py</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">JSON</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2021-<span class="text-purple-500 dark:text-purple-400">Projet actif</span> • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-purple-500 group-hover:text-purple-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Bot Discord Pourcentage -->
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow hover:shadow-md transition-all duration-300 cursor-pointer group" onclick="openProjectModal('pourcentage-bot')">
+                        <div class="relative">
+                            <div class="aspect-video w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                                <i class="ri-discord-fill text-4xl text-indigo-400 dark:text-indigo-500"></i>
+                            </div>
+                            <div class="absolute top-2 right-2 px-2 py-1 bg-purple-500 text-white text-xs rounded-md">
+                                Bot Discord
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-semibold">Pourcentage Bot</h3>
+                                <a href="https://pourcentagerp.fr" target="_blank" class="text-purple-500 hover:text-purple-600 transition-colors" onClick="event.stopPropagation();">
+                                    <i class="ri-external-link-line"></i>
+                                </a>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">Python</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-200">Discord.py</span>
+                                <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">JSON</span>
+                            </div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">
+                                2024-<span class="text-purple-500 dark:text-purple-400">Projet actif</span> • Développeur
+                            </div>
+                            <div class="mt-2 text-xs text-purple-500 group-hover:text-purple-600 flex items-center justify-end transition-colors">
+                                Voir détails <i class="ri-arrow-right-line ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ajouter d'autres projets bots ici -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal pour les détails de projet -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50 p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-gray-800 rounded-xl w-full max-w-4xl max-h-screen overflow-auto">
+            <div class="sticky top-0 bg-white dark:bg-gray-800 p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                <h3 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white">Détails du projet</h3>
+                <button id="modal-close" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" onclick="closeProjectModal()">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+                    <!-- Contenu principal -->
+                    <div>
+                        <div id="jeffwars-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                    <i class="ri-code-box-line text-2xl text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">JeffWars</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Site Web • 2023 • <span class="text-indigo-500 dark:text-indigo-400">~15h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Site Web réalisé pour le serveur Minecraft d'un ami.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-blue-500 dark:text-blue-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-blue-500 dark:text-blue-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Design responsive adapté à tous les appareils</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://jeffwars.net" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-external-link-line"></i> Visiter le site
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=m86jjuPQ84U" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-youtube-line"></i> Voir sur YouTube
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="pourcentage-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-game-fill text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Pourcentage Roleplay</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Serveur FiveM • 2024-<span class="text-green-500 dark:text-green-400">Projet actif</span> • <span class="text-indigo-500 dark:text-indigo-400">+1000h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Création de mon serveur Roleplay <span class="font-medium">inédit</span> GTA V, sur la plateforme FiveM.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Caractéristiques</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Jouabilité sur une carte entièrement nouvelle basée sur un monde post-apocalyptique</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Développement de 80% des scripts en interne pour une expérience unique</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Univers riche avec un lore complet (effondrement économique, dictature militaire, résistance)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Accessibilité accrue pour rendre le RP disponible au plus grand nombre</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border-l-4 border-green-500">
+                                <h5 class="font-semibold mb-2 text-green-500 dark:text-green-400">L'Histoire de Pourcentage RP</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                    En 2019, une crise économique frappe les États-Unis suite à l'effondrement des chaînes d'import-export. San Andreas, île dépendante du commerce, est dévastée par l'inflation et le chômage.
+                                </p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                    Merryweather Security profite du chaos pour prendre le contrôle de Los Santos, instaurant une dictature militaire. La population fuit vers le Nord, notamment à Roxwood, territoire indépendant qui résiste avec Paleto Bay contre les forces de Merryweather.
+                                </p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    En 2025, malgré les tentatives de reconquête, l'avenir reste incertain pour Roxwood et ses habitants face à la menace persistante de Merryweather.
+                                </p>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://pourcentagerp.fr" target="_blank" class="text-green-500 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-external-link-line"></i> Visiter le site
+                                </a>
+                                <a href="https://youtu.be/R0M7lwkU92E?si=7KF9tI_lcyZm3l5m" target="_blank" class="text-green-500 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-youtube-line"></i> Voir sur YouTube
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="entrepot-bot-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                                    <i class="ri-discord-fill text-2xl text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Bot Discord L'Entrepôt</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Bot Discord • 2021-<span class="text-purple-500 dark:text-purple-400">Projet actif</span> • <span class="text-indigo-500 dark:text-indigo-400">~15h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Bot permettant de gérer mon serveur Discord l'Entrepôt. Développé avec Discord.py, il offre une gestion complète des rôles, un système de tickets et de multiples fonctionnalités d'administration.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-purple-500 dark:text-purple-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">Python</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-200">Discord.py</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">JSON</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-purple-500 dark:text-purple-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système d'auto-rôles avec boutons interactifs pour les langues et catégories</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Gestion des tickets de support avec création automatique de salons privés</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de vérification des membres avec attribution de rôles</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Personnalisation des pseudonymes avec sélection de couleurs par boutons</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border-l-4 border-purple-500">
+                                <h5 class="font-semibold mb-2 text-purple-500 dark:text-purple-400">Extrait de code</h5>
+                                <div class="text-xs overflow-x-auto bg-gray-100 dark:bg-gray-900 p-3 rounded font-mono">
+                                    <pre class="text-gray-800 dark:text-gray-300">
+@bot.command()
+async def roles(ctx):
+    embed = discord.Embed(
+        title="🎭 Rôles Disponibles",
+        description=(
+            "Sélectionnez un rôle en cliquant sur les boutons ci-dessous :\n\n"
+            "🟩 **Minecraft** : Obtenez le rôle Minecraft.\n"
+            "🟦 **FiveM** : Obtenez le rôle FiveM.\n"
+            "🟪 **Développeur** : Obtenez le rôle Développeur.\n"
+            "🪙 **Cryptomonnaie** : Obtenez le rôle Cryptomonnaie.\n\n"
+            "Vous pouvez cliquer à nouveau pour retirer le rôle."
+        ),
+        color=0x00FF00
+    )
+    
+    view = View(timeout=None)
+    
+    minecraft_button = Button(label="Minecraft", style=discord.ButtonStyle.green, emoji="🟩")
+    async def minecraft_callback(interaction):
+        role = interaction.guild.get_role(MINECRAFT_ROLE_ID)
+        if role in interaction.user.roles:
+            await interaction.user.remove_roles(role)
+            await interaction.response.send_message("Le rôle Minecraft a été retiré.", ephemeral=True)
+        else:
+            await interaction.user.add_roles(role)
+            await interaction.response.send_message("Le rôle Minecraft a été attribué.", ephemeral=True)
+    
+    minecraft_button.callback = minecraft_callback
+    view.add_item(minecraft_button)
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="pourcentage-bot-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                                    <i class="ri-discord-fill text-2xl text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Bot Discord Pourcentage</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Bot Discord • 2024-<span class="text-purple-500 dark:text-purple-400">Projet actif</span> • <span class="text-indigo-500 dark:text-indigo-400">~3h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Bot Support pour mon serveur Discord Pourcentage RP, permettant aux utilisateurs de créer des tickets directement par message privé. Ce système facilite la communication entre les joueurs et l'équipe d'administration.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-purple-500 dark:text-purple-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">Python</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-indigo-100/80 dark:bg-indigo-900/30 text-indigo-800 dark:text-indigo-200">Discord.py</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">JSON</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-purple-500 dark:text-purple-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Création de tickets par message privé, sans commande spécifique</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Gestion des conversations bidirectionnelles entre staff et joueurs</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Possibilité d'archiver les conversations pour référence future</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Support des pièces jointes et images pour faciliter le partage d'information</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border-l-4 border-purple-500">
+                                <h5 class="font-semibold mb-2 text-purple-500 dark:text-purple-400">Extrait de code</h5>
+                                <div class="text-xs overflow-x-auto bg-gray-100 dark:bg-gray-900 p-3 rounded font-mono">
+                                    <pre class="text-gray-800 dark:text-gray-300">
+@bot.event
+async def on_message(message):
+    if isinstance(message.channel, discord.DMChannel) and message.author != bot.user:
+        guild = bot.get_guild(SERVER_ID)
+        category = discord.utils.get(guild.categories, id=TICKET_CATEGORY_ID)
+        existing_channel = await find_existing_ticket(message.author, guild, category)
+
+        if existing_channel:
+            await existing_channel.send(f"Nouveau message de {message.author.mention} :\n> {message.content}")
+            
+            for attachment in message.attachments:
+                if any(attachment.filename.lower().endswith(ext) for ext in ['.png', '.jpg', '.jpeg', '.webp']):
+                    await existing_channel.send(file=await attachment.to_file())
+            
+            if str(message.author.id) not in open_tickets:
+                open_tickets[str(message.author.id)] = existing_channel.id
+                save_tickets()
+        else:
+            ticket_channel = await guild.create_text_channel(f'ticket-{message.author.name}', category=category)
+            open_tickets[str(message.author.id)] = ticket_channel.id
+            save_tickets()
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="linklaugh-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                    <i class="ri-links-line text-2xl text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Link.laugh.yt</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Site Web • 2024-2025 • <span class="text-indigo-500 dark:text-indigo-400">~2h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Plateforme personnalisée de type Linktree qui répertorie tous mes réseaux sociaux et projets en un seul endroit, facilitant leur découverte et leur accès.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-blue-500 dark:text-blue-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-blue-500 dark:text-blue-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Interface simple et intuitive pour accéder à tous mes réseaux sociaux</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Design responsive adapté à tous les appareils</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Effets d'animation subtils pour améliorer l'expérience utilisateur</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://link.laugh.yt" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-external-link-line"></i> Visiter le site
+                                </a>
+                                <a href="https://github.com/xLaugh/link.laugh.yt" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-github-fill"></i> Code source
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="bipbipfood-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                                    <i class="ri-smartphone-line text-2xl text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">BipBipFood28</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Application Mobile • 2024 • <span class="text-indigo-500 dark:text-indigo-400">~5h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Application mobile en webview conçue pour calculer le prix des menus pour l'entreprise de livraison BipBipFood28.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-blue-500 dark:text-blue-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-blue-500 dark:text-blue-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Calcul rapide des prix des livraisons et menus</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Interface optimisée pour les appareils mobiles</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Fonctionne hors-ligne via une webview mobile</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Design simple pour une utilisation rapide en situation de livraison</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://github.com/xLaugh/BipBipFood28" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-github-fill"></i> Code source
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="lfterritory-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-map-pin-fill text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">LfTerritory</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Script FiveM • 2024 • <span class="text-indigo-500 dark:text-indigo-400">~40h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Script développé initialement pour mon serveur GTA RP "Pourcentage" puis mis en vente au public. Actuellement utilisé par "Hurricane RP", serveur populaire appartenant au streamer Medja. Il permet de gérer des territoires et des gangs sur les serveurs FiveM avec un système de vente de drogues dynamique.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">SQL</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">ESX</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de création et gestion de crews avec des noms et devises personnalisés</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Revendication et contrôle de territoires sur la carte du jeu</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de vente de drogues avec des prix variables selon les territoires</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Configuration complète via un fichier de paramètres</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://www.youtube.com/watch?v=UisdqecmBA4" target="_blank" class="text-green-400 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-youtube-line"></i> Voir sur YouTube
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="cookedcraft-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-restaurant-line text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">CookedCraft</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Serveur Minecraft • 2025-<span class="text-green-500 dark:text-green-400">Projet actif</span> • <span class="text-indigo-500 dark:text-indigo-400">~50h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Suite à une offre sur <a href="https://findyourdev.fr/" target="_blank" class="text-blue-500 hover:text-blue-600 transition-colors">FindYourDev</a>, j'ai trouvé un client qui cherchait un développeur Java pour son serveur Minecraft. Ce projet consiste en la création d'un serveur PVP/FACTION orienté sur la cuisine, incluant de nouveaux crafts, items personnalisés, et systèmes complexes.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">Java</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">SQL</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200">Spigot</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de crafts personnalisés avec de nouveaux items liés à la cuisine</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de progression avec expérience et quêtes thématiques</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Tables de craft customs pour préparer des recettes exclusives</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Conseil technique et accompagnement sur l'hébergement et la conception du gameplay</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="lckhudplus-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-dashboard-3-line text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">lckHUDplus</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">HUD FiveM • 2024 • <span class="text-indigo-500 dark:text-indigo-400">~5h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Pour mon serveur GTA RP, il fallait un HUD permettant d'afficher la barre de vie, de soif et de faim. J'ai trouvé cette HUD en open-source, et pour une meilleure expérience joueur, j'ai ajouté par-dessus la possibilité de déplacer et de cacher les éléments. Par la suite j'ai même pu discuter avec le développeur originel qui m'a félicité pour ce que j'ai fait.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Interface utilisateur moderne et minimaliste pour afficher les informations vitales</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Fonction glisser-déposer pour repositionner les éléments du HUD selon les préférences</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Possibilité d'activer/désactiver individuellement chaque élément du HUD</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de sauvegarde des positions et des préférences utilisateur</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://github.com/xLaugh/lckHUDplus" target="_blank" class="text-green-400 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-github-fill"></i> Code source
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="laughfightclub-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-boxing-fill text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">LaughFightClub</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Script FiveM • 2024 • <span class="text-indigo-500 dark:text-indigo-400">~15h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Script développé à la base pour mon serveur GTA RP, abandonné ensuite pour une autre méthode de combat face à des PNJs plus simple. Ce système permet aux joueurs d'affronter des vagues d'ennemis en solo ou en coopération.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">Lua</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JS</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Mode Solo et Coopératif avec système d'attente pour le multijoueur</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>15 vagues de combat progressives avec différents types de PNJs et armes variées</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Interface utilisateur dynamique avec système de santé et de score</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Points de spawn aléatoires pour les PNJs et système de récompenses</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://github.com/xLaugh/LaughFightClub" target="_blank" class="text-green-400 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-github-fill"></i> Code source
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="jump-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-jump-2-line text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Jump</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Plugin Minecraft • 2023 • <span class="text-indigo-500 dark:text-indigo-400">~10h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Réalisé pour aider les développeurs de WonderGames, j'ai développé ce plugin de parkour pour leur lobby. Ce système permet aux joueurs de réaliser des parcours avec des checkpoints et suivi de progression.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">Java</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200">Spigot API</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de détection de plaques de pression pour le début, les checkpoints et la fin</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Plaque en or pour le départ, en fer pour les checkpoints et en bois pour la fin</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de suivi de progression et de gestion des tentatives</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://github.com/xLaugh/Jump" target="_blank" class="text-green-400 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-github-fill"></i> Code source
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div id="simplepvpsoup-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-bowl-fill text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">SimplyPvPSoup</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Plugin Minecraft • 2020-2024 • <span class="text-indigo-500 dark:text-indigo-400">~15h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Un des mes premiers plugins Minecraft, développé initialement en 2020 puis amélioré et publié sur SpigotMC en 2023. Ce plugin implémente le mode PvP Soupe, un style de jeu populaire où les joueurs peuvent régénérer leur vie en utilisant des soupes, créant ainsi des combats plus dynamiques et stratégiques.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200">Java</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200">Spigot</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système de régénération de vie via les soupes</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Mode PvP spécial avec mécaniques adaptées</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Configuration facile pour les administrateurs de serveurs</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="https://www.spigotmc.org/resources/simplypvpsoup-%E2%9C%85alpha.112318/" target="_blank" class="text-green-400 hover:text-green-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-external-link-line"></i> Voir sur SpigotMC
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="pourcentage-mdt-detail" class="hidden space-y-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                                    <i class="ri-police-car-fill text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Pourcentage MDT</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Application Web • 2024-<span class="text-green-500 dark:text-green-400">Projet actif</span> • <span class="text-indigo-500 dark:text-indigo-400">~50h de développement</span></p>
+                                </div>
+                            </div>
+                            
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Un MDT (Mobile Data Terminal) pour la Police du serveur Pourcentage RP. Cette application permet aux shériffs d'enregistrer des individus, de créer des casiers judiciaires, et d'être informés de tout ce qui se passe en interne et sur la gestion des citoyens.
+                            </p>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Technologies utilisées</h5>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-2 py-1 text-xs rounded-full bg-purple-100/80 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200">PHP</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-yellow-100/80 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200">JavaScript</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-cyan-100/80 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-200">Tailwind CSS</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-orange-100/80 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200">HTML</span>
+                                    <span class="px-2 py-1 text-xs rounded-full bg-blue-100/80 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200">CSS</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h5 class="font-semibold mb-3 text-green-500 dark:text-green-400">Fonctionnalités</h5>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Système d'enregistrement et de gestion des citoyens</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Création et mise à jour de casiers judiciaires</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Dashboard pour le suivi des activités policières</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+                                        <span>Interface de communication interne pour les forces de l'ordre</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                                <a href="img/1.png" target="_blank" class="text-blue-400 hover:text-blue-600 transition-colors inline-flex items-center gap-1">
+                                    <i class="ri-image-line"></i> Démo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-8 px-4 bg-white dark:bg-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col items-center justify-center space-y-4">
+                <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                    Laugh
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://github.com/xLaugh/" target="_blank" rel="noopener noreferrer" 
+                       class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+                        <i class="ri-github-fill text-xl"></i>
+                    </a>
+                    <a href="https://discord.gg/6wdkx6X" target="_blank" rel="noopener noreferrer" 
+                       class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">
+                        <i class="ri-discord-fill text-xl"></i>
+                    </a>
+                </div>
+
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    &copy; 2024-2025 Laugh. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialisation au chargement du document
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurer les liens de projets
+            document.querySelectorAll('.group[onclick]').forEach(card => {
+                card.onclick = function() {
+                    const projectId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    openProjectModal(projectId);
+                };
+            });
+            
+            // Fermer le modal en cliquant en dehors
+            document.getElementById('project-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeProjectModal();
+                }
+            });
+            
+            // Fermer le modal avec le bouton de fermeture
+            document.getElementById('modal-close').addEventListener('click', function() {
+                closeProjectModal();
+            });
+        });
+    </script>
+</body>
+</html> 
