@@ -51,6 +51,9 @@ function openProjectModal(projectId) {
         case 'simplepvpsoup':
             modalTitle.textContent = 'SimplyPvPSoup';
             break;
+        case 'pourcentageshop':
+            modalTitle.textContent = 'PourcentageShop';
+            break;
         case 'pourcentage-mdt':
             modalTitle.textContent = 'Pourcentage MDT';
             break;
