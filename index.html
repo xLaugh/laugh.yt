@@ -47,21 +47,26 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <style>
+    @media (prefers-reduced-motion: reduce){
+      *{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important;scroll-behavior:auto!important}
+    }
+    </style>
 </head>
 <body class="font-poppins bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
     <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg">
         <div class="container mx-auto px-4">
             <nav class="flex justify-between items-center h-16">
-                <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                <a href="#hero" class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                     Laugh
-                </div>
+                </a>
                 
                 <ul class="hidden md:flex space-x-8">
-                    <li><a href="#langages" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Langages</a></li>
-                    <li><a href="#ide" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">IDE</a></li>
-                    <li><a href="#logiciels" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Logiciels</a></li>
-                    <li><a href="#frameworks" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Frameworks</a></li>
-                    <li><a href="realisations.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Réalisations</a></li>
+                    <li><a href="#parcours" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Parcours</a></li>
+                    <li><a href="#competences" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Compétences</a></li>
+                    <li><a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Réalisations</a></li>
                 </ul>
 
                 <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
@@ -83,17 +88,17 @@
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
-                    <a href="https://github.com/xLaugh" target="_blank" 
+                    <a href="https://github.com/xLaugh" target="_blank" rel="noopener noreferrer"
                        class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
                         <i class="ri-github-fill text-xl"></i>
                         <span>xLaugh</span>
                     </a>
-                    <a href="https://www.youtube.com/@thatlaugh" target="_blank"
+                    <a href="https://www.youtube.com/@thatlaugh" target="_blank" rel="noopener noreferrer"
                        class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
                         <i class="ri-youtube-fill text-xl text-red-500"></i>
                         <span>thatlaugh</span>
                     </a>
-                    <a href="https://discord.gg/6wdkx6X" target="_blank"
+                    <a href="https://discord.gg/6wdkx6X" target="_blank" rel="noopener noreferrer"
                        class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300">
                         <i class="ri-discord-fill text-xl text-indigo-500"></i>
                         <span>L'Entrepôt</span>
@@ -101,341 +106,422 @@
                 </div>
             </div>
         </section>
-
-        <section id="langages" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        
+        <section id="parcours" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">Langages de programmation</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-html5-fill text-4xl text-orange-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">HTML</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
-                    </a>
+                <h2 class="text-3xl font-bold mb-8 text-center">Parcours scolaire</h2>
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-gray-300 dark:bg-gray-700"></div>
+                    <div class="space-y-12">
+                        <!-- Événement 1 (gauche) -->
+                        <div class="grid grid-cols-9 items-start">
+                            <div class="col-span-4 pr-6 text-right">
+                                <h3 class="font-semibold">Bac STI2D • Option ITEC</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">2021 - 2022</p>
+                            </div>
+                            <div class="col-span-1 relative">
+                                <span class="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-white dark:ring-gray-800"></span>
+                            </div>
+                            <div class="col-span-4"></div>
+                        </div>
 
-                    <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-css3-fill text-4xl text-blue-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">CSS</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
-                    </a>
+                        <!-- Événement 2 (droite) -->
+                        <div class="grid grid-cols-9 items-start">
+                            <div class="col-span-4"></div>
+                            <div class="col-span-1 relative">
+                                <span class="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-white dark:ring-gray-800"></span>
+                            </div>
+                            <div class="col-span-4 pl-6">
+                                <h3 class="font-semibold">BTS Systèmes Numériques • Option Informatique et Réseaux</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">2022 - 2024</p>
+                            </div>
+                        </div>
 
-                    <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-javascript-fill text-4xl text-yellow-400"></i>
-                        <h3 class="text-lg font-semibold mt-2">JavaScript</h3>
-                        <div class="text-yellow-500 mt-1">★★☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
-                    </a>
-
-                    <a href="https://www.php.net" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-s-slash-fill text-4xl text-purple-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">PHP</h3>
-                        <div class="text-yellow-500 mt-1">★★☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
-                    </a>
-
-                    <a href="https://sql.sh" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-database-2-fill text-4xl text-blue-600"></i>
-                        <h3 class="text-lg font-semibold mt-2">SQL</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-
-                    <a href="https://www.java.com" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-box-fill text-4xl text-red-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Java</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
-                    </a>
-
-                    <a href="https://www.lua.org" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-fill text-4xl text-blue-400"></i>
-                        <h3 class="text-lg font-semibold mt-2">Lua</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
-                    </a>
-
-                    <a href="https://www.python.org" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-terminal-box-line text-4xl text-yellow-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Python</h3>
-                        <div class="text-yellow-500 mt-1">★★☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
-                    </a>
-
-                    <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-s-slash-fill text-4xl text-blue-600"></i>
-                        <h3 class="text-lg font-semibold mt-2">C++</h3>
-                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
-                    </a>
+                        <!-- Événement 3 (gauche) -->
+                        <div class="grid grid-cols-9 items-start">
+                            <div class="col-span-4 pr-6 text-right">
+                                <h3 class="font-semibold">BUT 3 Informatique • Développement Web & Mobile</h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm">2025 - 2026</p>
+                            </div>
+                            <div class="col-span-1 relative">
+                                <span class="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-green-500 ring-4 ring-white dark:ring-gray-800"></span>
+                    </div>
+                            <div class="col-span-4"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="ide" class="py-20 px-4 bg-white dark:bg-gray-900">
+        <section id="competences" class="py-20 px-4 bg-white dark:bg-gray-900">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">IDE</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-                    <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" 
-                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-terminal-window-fill text-4xl text-blue-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Visual Studio Code</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-
-                    <a href="https://www.eclipse.org" target="_blank" rel="noopener noreferrer" 
-                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-box-line text-4xl text-purple-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Eclipse</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
-                    </a>
-
-                    <a href="https://vscodium.com" target="_blank" rel="noopener noreferrer" 
-                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-line text-4xl text-blue-400"></i>
-                        <h3 class="text-lg font-semibold mt-2">VSCodium</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
-                    </a>
-
-                    <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" 
-                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-cursor-fill text-4xl text-green-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Cursor</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
-                    </a>
-
-                    <a href="https://github.com/atom/atom" target="_blank" rel="noopener noreferrer" 
-                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-apps-2-fill text-4xl text-green-400"></i>
-                        <h3 class="text-lg font-semibold mt-2">Atom</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-
-                    <a href="https://www.sublimetext.com" target="_blank" rel="noopener noreferrer" 
-                       class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-edit-2-fill text-4xl text-orange-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Sublime Text</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-
-                    <a href="https://visualstudio.microsoft.com/" target="_blank" rel="noopener noreferrer" 
-                        class="ide-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer col-span-1 sm:col-span-2 md:col-span-3">
-                        <i class="ri-microsoft-fill text-4xl text-purple-600"></i>
-                        <h3 class="text-lg font-semibold mt-2">Visual Studio</h3>
-                        <div class="text-yellow-500 mt-1">★★☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="logiciels" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">Logiciels</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <a href="https://notepad-plus-plus.org" target="_blank" rel="noopener noreferrer" 
-                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-file-edit-fill text-4xl text-green-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Notepad++</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
-                    </a>
-
-                    <a href="https://www.vegascreativesoftware.com" target="_blank" rel="noopener noreferrer" 
-                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-movie-fill text-4xl text-blue-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Sony Vegas</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
-                    </a>
-
-                    <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer" 
-                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-image-edit-fill text-4xl text-indigo-600"></i>
-                        <h3 class="text-lg font-semibold mt-2">Photoshop</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2016</div>
-                    </a>
-
-                    <a href="https://www.office.com" target="_blank" rel="noopener noreferrer" 
-                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-file-word-fill text-4xl text-blue-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Suite Office</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
-                    </a>
-
-                    <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer" 
-                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-paint-fill text-4xl text-purple-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Canva</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
-                    </a>
-
-                    <a href="https://www.phpmyadmin.net" target="_blank" rel="noopener noreferrer" 
-                       class="software-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-database-fill text-4xl text-orange-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">PhpMyAdmin</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="frameworks" class="py-20 px-4 bg-white dark:bg-gray-900">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">Frameworks & Technologies</h2>
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-                    <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-layout-4-fill text-4xl text-cyan-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Tailwind CSS</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
-                    </a>
-
-                    <a href="https://getbootstrap.com" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-bootstrap-fill text-4xl text-purple-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Bootstrap</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
-                    </a>
-
-                    <a href="https://discord.js.org" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-discord-fill text-4xl text-indigo-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Discord Bot</h3>
-                        <div class="text-yellow-500 mt-1">★★★★★</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
-                    </a>
-
-                    <a href="https://core.telegram.org/bots/api" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-telegram-fill text-4xl text-blue-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Telegram Bot</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
-                    </a>
-
-                    <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-server-line text-4xl text-emerald-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Node.js</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
-                    </a>
-
-                    <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-ship-fill text-4xl text-sky-600"></i>
-                        <h3 class="text-lg font-semibold mt-2">Docker</h3>
-                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2023</div>
-                    </a>
-
-                    <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-reactjs-line text-4xl text-blue-400"></i>
-                        <h3 class="text-lg font-semibold mt-2">React</h3>
-                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
-                    </a>
-
-                    <a href="https://vuejs.org" target="_blank" rel="noopener noreferrer" 
-                       class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-vuejs-fill text-4xl text-green-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Vue.js</h3>
-                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
-                    </a>
-
-                    <a href="https://appinventor.mit.edu/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-android-fill text-4xl text-green-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">MIT App Inventor</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
-                    </a>
-
-                    <a href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-gamepad-fill text-4xl text-orange-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Scratch</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2018</div>
-                    </a>
-
-                    <a href="https://store.steampowered.com/app/682130/Discord_Bot_Maker/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-discord-fill text-4xl text-indigo-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Discord Bot Maker</h3>
-                        <div class="text-yellow-500 mt-1">★★★★☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2020</div>
-                    </a>
-
-                    <a href="https://github.com/SkriptLang/Skript" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-code-box-fill text-4xl text-green-600"></i>
-                        <h3 class="text-lg font-semibold mt-2">Skript</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2019</div>
-                    </a>
-
-                    <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-flask-fill text-4xl text-gray-700"></i>
-                        <h3 class="text-lg font-semibold mt-2">Flask</h3>
-                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2022</div>
-                    </a>
-
-                    <a href="https://www.pygame.org/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-game-fill text-4xl text-yellow-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Pygame</h3>
-                        <div class="text-yellow-500 mt-1">★★★☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2024</div>
-                    </a>
-
-                    <a href="https://www.unrealengine.com/" target="_blank" rel="noopener noreferrer" 
-                        class="skill-card bg-white dark:bg-gray-800 rounded-xl p-6 text-center transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer">
-                        <i class="ri-game-line text-4xl text-slate-500"></i>
-                        <h3 class="text-lg font-semibold mt-2">Unreal Engine</h3>
-                        <div class="text-yellow-500 mt-1">★☆☆☆☆</div>
-                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Depuis 2021</div>
-                    </a>
+                <h2 class="text-3xl font-bold mb-12 text-center">Compétences</h2>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Langages de programmation</h3>
+                        <ul class="pl-0 space-y-2 text-gray-800 dark:text-gray-200">
+                            <li>
+                                <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
+                                    <i class="ri-html5-fill text-orange-500 text-xl"></i> HTML
+                                </a>
+                            </li>
+                            <li>
+                                <div class="inline-flex items-center gap-2"><i class="ri-css3-fill text-blue-500 text-xl"></i> CSS</div>
+                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li><a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">SCSS</a></li>
+                                    <li><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Bootstrap</a></li>
+                                    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Tailwind</a></li>
+                                    <li><a href="https://bulma.io/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Bulma</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <i class="ri-javascript-fill text-yellow-400 text-xl"></i> JavaScript
+                                </a>
+                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li><a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Node.js</a></li>
+                                    <li><a href="https://www.electronjs.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Electron</a></li>
+                                    <li><a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Svelte</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://sql.sh" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
+                                    <i class="ri-database-2-fill text-blue-600 text-xl"></i> SQL
+                                </a>
+                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li><a href="https://mariadb.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">MariaDB</a></li>
+                                    <li><a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">MySQL</a></li>
+                                    <li><a href="https://www.postgresql.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">PostgreSQL</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="inline-flex items-center gap-2"><i class="ri-code-s-slash-fill text-purple-500 text-xl"></i> PHP</div>
+                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li><a href="https://www.slimframework.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">PHP Slim</a></li>
+                                    <li><a href="https://www.phpmyadmin.net/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">phpMyAdmin</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
+                                    <i class="ri-terminal-box-line text-yellow-500 text-xl"></i> Python
+                                </a>
+                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li><a href="https://flask.palletsprojects.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Flask</a></li>
+                                    <li><a href="https://www.pygame.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Pygame</a></li>
+                                    <li><a href="https://discordpy.readthedocs.io" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">discord.py</a></li>
+                                    <li><a href="https://docs.pycord.dev" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Pycord</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://www.lua.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <i class="ri-code-fill text-blue-400 text-xl"></i> Lua
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
+                                    <i class="ri-code-box-fill text-red-500 text-xl"></i> Java
+                                </a>
+                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
+                                    <li><a href="https://hub.spigotmc.org/javadocs/spigot/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">SpigotMC</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <i class="ri-microsoft-fill text-purple-600 text-xl"></i> C#
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <i class="ri-code-s-slash-fill text-teal-500 text-xl"></i> Solidity
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">IDE</h3>
+                        <ul class="list-none pl-0 space-y-2 text-gray-800 dark:text-gray-200">
+                            <li>
+                                <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/visualstudiocode" alt="VS Code" class="w-5 h-5" loading="lazy"> Visual Studio Code
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.eclipse.org/ide/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/eclipseide" alt="Eclipse" class="w-5 h-5" loading="lazy"> Eclipse
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://vscodium.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/vscodium" alt="VSCodium" class="w-5 h-5" loading="lazy"> VSCodium
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.cursor.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <i class="ri-code-s-slash-line text-lg"></i> Cursor
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://atom.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/atom" alt="Atom" class="w-5 h-5" loading="lazy"> Atom
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.sublimetext.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/sublimetext" alt="Sublime Text" class="w-5 h-5" loading="lazy"> Sublime Text
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://visualstudio.microsoft.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/visualstudio" alt="Visual Studio" class="w-5 h-5" loading="lazy"> Visual Studio
+                                </a>
+                            </li>
+                        </ul>
+                        <h3 class="text-lg font-semibold mt-8 mb-3">Systèmes d'exploitation</h3>
+                        <ul class="list-none pl-0 space-y-2 text-gray-800 dark:text-gray-200">
+                            <li>
+                                <a href="https://www.microsoft.com/windows/windows-11" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/windows" alt="Windows" class="w-5 h-5" loading="lazy"> Windows 11
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.microsoft.com/windows-server" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/windows" alt="Windows Server" class="w-5 h-5" loading="lazy"> Windows Server
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.debian.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/debian" alt="Debian" class="w-5 h-5" loading="lazy"> Debian
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.kali.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/kalilinux" alt="Kali Linux" class="w-5 h-5" loading="lazy"> Kali Linux
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/raspberrypi" alt="Raspberry Pi OS" class="w-5 h-5" loading="lazy"> Raspberry Pi OS
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3">Logiciels</h3>
+                        <ul class="list-none pl-0 space-y-2 text-gray-800 dark:text-gray-200">
+                            <li>
+                                <a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/notepadplusplus" alt="Notepad++" class="w-5 h-5" loading="lazy"> Notepad++
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.vegascreativesoftware.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/vegas" alt="Vegas  Pro" class="w-5 h-5" loading="lazy"> Vegas Pro
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/adobephotoshop" alt="Photoshop" class="w-5 h-5" loading="lazy"> Photoshop
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.microsoft.com/microsoft-365" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/microsoftoffice" alt="Microsoft Office" class="w-5 h-5" loading="lazy"> Suite Office
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/canva" alt="Canva" class="w-5 h-5" loading="lazy"> Canva
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://workspace.google.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/googleworkspace" alt="Google Workspace" class="w-5 h-5" loading="lazy"> Google Workspace
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/docker" alt="Docker" class="w-5 h-5" loading="lazy"> Docker
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/github" alt="GitHub Desktop" class="w-5 h-5" loading="lazy"> GitHub Desktop
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://trello.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/trello" alt="Trello" class="w-5 h-5" loading="lazy"> Trello
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.postman.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/postman" alt="Postman" class="w-5 h-5" loading="lazy"> Postman
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/notion" alt="Notion" class="w-5 h-5" loading="lazy"> Notion
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/figma" alt="Figma" class="w-5 h-5" loading="lazy"> Figma
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://winscp.net/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/winscp" alt="WinSCP" class="w-5 h-5" loading="lazy"> WinSCP
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <i class="ri-terminal-box-line text-lg"></i> MobaXterm
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
+                                    <img src="https://cdn.simpleicons.org/virtualbox" alt="VirtualBox" class="w-5 h-5" loading="lazy"> VirtualBox
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
         </section>
 
         <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
             <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">Mes Projets</h2>
-                <div class="text-center">
-                    <p class="text-xl mb-8 text-gray-600 dark:text-gray-400">Découvrez mes différentes réalisations</p>
-                    <a href="realisations.html" 
-                       class="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-all duration-300 transform hover:scale-105">
-                        Voir mes réalisations
+                <h2 class="text-3xl font-bold mb-12 text-center">Réalisations</h2>
+
+                <h3 class="text-xl font-semibold mb-4">Réalisations principales</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                    <!-- Pourcentage RP -->
+                    <a href="https://pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="block bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+                        <div class="bg-gray-200 dark:bg-gray-700 aspect-[16/9]">
+                            <img src="img/miniature/pourcentage.png" alt="Pourcentage RP" class="w-full h-full object-cover" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-semibold text-base">Pourcentage RP</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Serveur RP FiveM</p>
+                        </div>
+                    </a>
+
+                    <!-- LFScripts -->
+                    <a href="https://shop.lfscripts.com" target="_blank" rel="noopener noreferrer" class="block bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+                        <div class="bg-gray-200 dark:bg-gray-700 aspect-[16/9]">
+                            <img src="img/miniature/lfscripts.png" alt="LFScripts" class="w-full h-full object-cover" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-semibold text-base">LFScripts</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Boutique de scripts FiveM (Lua)</p>
+                        </div>
+                    </a>
+
+                    <!-- Discord Bot -->
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="block bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+                        <div class="bg-gray-200 dark:bg-gray-700 aspect-[16/9]">
+                            <img src="img/miniature/discord.jpg" alt="Discord Bot" class="w-full h-full object-cover" loading="lazy" width="1280" height="720">
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-semibold text-base">Discord Bot</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Bot pour le serveur de Byilhann & Nicotine</p>
+                        </div>
                     </a>
                 </div>
+
+                <h3 class="text-xl font-semibold mb-3">Autres réalisations</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch">
+                    <li class="h-full">
+                        <a href="https://github.com/xLaugh/BipBipFood28" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">BipBipFood28</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Application mobile en webview pour calcul des menus (BipBipFood28).</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="https://jeffwars.net" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">JeffWars</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Site Web réalisé pour le serveur Minecraft d'un ami</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="https://github.com/xLaugh/mdt.pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">Pourcentage MDT</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">MDT pour la Police de mon serveur Pourcentage RP (enregistrement, casiers, gestion interne).</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="https://whitelist.pourcentagerp.fr/" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">Whitelist PourcentageRP</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Site web de Whitelist pour mon serveur Pourcentage RP</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">CookedGame</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Serveur Minecraft Survie orienté sur la cuisine, avec crafts et items personnalisés.</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">Java</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">Bel Air RP</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Développement d'un serveur FiveM pour un client</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">FiveM</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="https://github.com/xLaugh/Jump" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">Plugin Parcours (Minecraft)</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Développement d'un plugin de Parcours pour WonderGames</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">Java</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="h-full">
+                        <a href="https://hurricanerp.fr/" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h4 class="font-semibold text-sm">Hurricane RP</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">Aide aux devs pour Territoires/Crew basé sur lfTerritory (LFScripts)</p>
+                                </div>
+                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">FiveM</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -443,9 +529,9 @@
     <footer class="py-8 px-4 bg-white dark:bg-gray-900">
         <div class="container mx-auto">
             <div class="flex flex-col items-center justify-center space-y-4">
-                <div class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                <a href="#hero" class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                     Laugh
-                </div>
+                </a>
 
                 <div class="flex space-x-6">
                     <a href="https://github.com/xLaugh/" target="_blank" rel="noopener noreferrer" 
@@ -465,16 +551,6 @@
         </div>
     </footer>
 
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full mx-4">
-            <div class="flex justify-between items-start mb-4">
-                <h3 id="modal-title" class="text-xl font-bold text-gray-900 dark:text-white"></h3>
-                <button id="modal-close" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
-                    <i class="ri-close-line text-2xl"></i>
-                </button>
-            </div>
-            <div id="modal-content" class="text-gray-700 dark:text-gray-300"></div>
-        </div>
-    </div>
+    
 </body>
 </html>
