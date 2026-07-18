@@ -13,33 +13,16 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        light: {
-                            bg: '#ffffff',
-                            text: '#000000',
-                            accent: '#4a5568'
-                        },
-                        dark: {
-                            bg: '#1a202c',
-                            text: '#ffffff',
-                            accent: '#a0aec0'
-                        }
-                    },
                     fontFamily: {
                         'poppins': ['Poppins', 'sans-serif']
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'scale': 'scale 0.3s ease-in-out'
+                        'fade-in-up': 'fadeInUp 0.6s ease-out'
                     },
                     keyframes: {
                         fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '0%': { opacity: '0', transform: 'translateY(12px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        scale: {
-                            '0%': { transform: 'scale(1)' },
-                            '100%': { transform: 'scale(1.05)' }
                         }
                     }
                 }
@@ -58,595 +41,267 @@
     }
     </style>
 </head>
-<body class="font-poppins bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg">
-        <div class="container mx-auto px-4">
-            <nav class="flex justify-between items-center h-16">
-                <a href="#hero" class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                    Laugh
-                </a>
-                
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#parcours" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Parcours</a></li>
-                    <li><a href="#competences" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Compétences</a></li>
-                    <li><a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">Réalisations</a></li>
-                </ul>
+<body class="font-poppins bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300">
-                    <i class="ri-moon-line text-xl hidden dark:block"></i>
-                    <i class="ri-sun-line text-xl block dark:hidden"></i>
-                </button>
+    <!-- Bouton thème, discret en haut à droite -->
+    <button id="theme-toggle" aria-label="Changer de thème"
+            class="fixed top-4 right-4 z-50 p-2 rounded-lg text-gray-500 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors">
+        <i class="ri-moon-line text-lg hidden dark:block"></i>
+        <i class="ri-sun-line text-lg block dark:hidden"></i>
+    </button>
+
+    <main class="max-w-2xl mx-auto px-6 py-16 sm:py-20 animate-fade-in-up">
+
+        <!-- ============ IDENTITÉ ============ -->
+        <header>
+            <div class="flex items-center gap-4">
+                <img src="img/laugh.PNG" alt="Laugh" class="w-16 h-16 rounded-full object-cover ring-1 ring-gray-200 dark:ring-gray-800">
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">Laugh</h1>
+                    <p class="mt-0.5 text-gray-500 dark:text-gray-400">@thatlaugh</p>
+                </div>
+            </div>
+
+            <p class="mt-5 text-gray-600 dark:text-gray-300">
+                BAC +3 · BUT Informatique - Développement Web et Mobile
+            </p>
+
+            <nav class="mt-4 flex items-center gap-4 text-xl">
+                <a href="https://github.com/xLaugh" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                   class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"><i class="ri-github-fill"></i></a>
+                <a href="https://www.youtube.com/@thatlaugh" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                   class="text-gray-500 dark:text-gray-400 hover:text-red-500 transition-colors"><i class="ri-youtube-fill"></i></a>
+                <a href="https://discord.gg/6wdkx6X" target="_blank" rel="noopener noreferrer" aria-label="Discord"
+                   class="text-gray-500 dark:text-gray-400 hover:text-indigo-500 transition-colors"><i class="ri-discord-fill"></i></a>
             </nav>
-        </div>
-    </header>
+        </header>
 
-    <main class="pt-16">
-        <section id="hero" class="min-h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
-            <div class="container mx-auto text-center">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent animate-fade-in-up">
-                    Développeur
-                </h1>
-                <p class="text-xl mb-12 text-gray-600 dark:text-gray-400 animate-fade-in-up" style="animation-delay: 0.2s">
-                    Je travaille sur des projets divers et variés, principalement en web, lua et python
-                </p>
+        <hr class="my-10 border-gray-200 dark:border-gray-800">
 
-                <div class="flex flex-wrap justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
-                    <a href="https://github.com/xLaugh" target="_blank" rel="noopener noreferrer"
-                       class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 animate-float" style="animation-delay: 0s;">
-                        <i class="ri-github-fill text-xl"></i>
-                        <span>xLaugh</span>
-                    </a>
-                    <a href="https://www.youtube.com/@thatlaugh" target="_blank" rel="noopener noreferrer"
-                       class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 animate-float" style="animation-delay: 0.2s;">
-                        <i class="ri-youtube-fill text-xl text-red-500"></i>
-                        <span>thatlaugh</span>
-                    </a>
-                    <a href="https://discord.gg/6wdkx6X" target="_blank" rel="noopener noreferrer"
-                       class="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 animate-float" style="animation-delay: 0.4s;">
-                        <i class="ri-discord-fill text-xl text-indigo-500"></i>
-                        <span>L'Entrepôt</span>
-                    </a>
+        <!-- ============ COMPÉTENCES ============ -->
+        <section id="competences">
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Compétences</h2>
+
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Langages</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        HTML · CSS <span class="text-gray-400 dark:text-gray-600">(SCSS, Bootstrap, Tailwind, Bulma)</span> ·
+                        JavaScript <span class="text-gray-400 dark:text-gray-600">(Node.js, Electron, Vue.js)</span> ·
+                        SQL <span class="text-gray-400 dark:text-gray-600">(MariaDB, MySQL, PostgreSQL)</span> ·
+                        PHP <span class="text-gray-400 dark:text-gray-600">(Slim, phpMyAdmin)</span> ·
+                        Python <span class="text-gray-400 dark:text-gray-600">(Flask, Pygame, discord.py, Pycord)</span> ·
+                        Lua · Java <span class="text-gray-400 dark:text-gray-600">(SpigotMC)</span> ·
+                        C# · Flutter <span class="text-gray-400 dark:text-gray-600">(Dart)</span> · Solidity
+                    </p>
                 </div>
-            </div>
-        </section>
-        
-        <section id="parcours" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-8 text-center">Parcours scolaire</h2>
-                <div class="relative max-w-4xl mx-auto">
-                    <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-gray-300 dark:bg-gray-700"></div>
-                    <div class="space-y-12">
-                        <div class="grid grid-cols-9 items-start">
-                            <div class="col-span-4 pr-6 text-right">
-                                <h3 class="font-semibold">Bac STI2D • Option ITEC</h3>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm">2021 - 2022</p>
-                            </div>
-                            <div class="col-span-1 relative">
-                                <span class="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-blue-500 ring-4 ring-white dark:ring-gray-800"></span>
-                            </div>
-                            <div class="col-span-4"></div>
-                        </div>
-
-                        <div class="grid grid-cols-9 items-start">
-                            <div class="col-span-4"></div>
-                            <div class="col-span-1 relative">
-                                <span class="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-purple-500 ring-4 ring-white dark:ring-gray-800"></span>
-                            </div>
-                            <div class="col-span-4 pl-6">
-                                <h3 class="font-semibold">BTS Systèmes Numériques • Option Informatique et Réseaux</h3>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm">2022 - 2024</p>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-9 items-start">
-                            <div class="col-span-4 pr-6 text-right">
-                                <h3 class="font-semibold">BUT 3 Informatique • Développement Web & Mobile</h3>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm">2025 - 2026</p>
-                            </div>
-                            <div class="col-span-1 relative">
-                                <span class="absolute left-1/2 -translate-x-1/2 top-1 w-4 h-4 rounded-full bg-green-500 ring-4 ring-white dark:ring-gray-800"></span>
-                    </div>
-                            <div class="col-span-4"></div>
-                        </div>
-                    </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">IDE &amp; systèmes</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        VS Code · Eclipse · VSCodium · Cursor · Atom · Sublime Text · Visual Studio ·
+                        Windows 11 · Windows Server · Debian · Kali Linux · Raspberry Pi OS
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Logiciels</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Notepad++ · Vegas Pro · Photoshop · Suite Office · Canva · Google Workspace · Docker ·
+                        GitHub Desktop · Git · Trello · Postman · HeidiSQL · Notion · Figma · WinSCP · MobaXterm · VirtualBox
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="competences" class="py-20 px-4 bg-white dark:bg-gray-900">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">Compétences</h2>
-                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div>
-                        <h3 class="text-lg font-semibold mb-3">Langages de programmation</h3>
-                        <ul class="pl-0 space-y-2 text-gray-800 dark:text-gray-200">
-                            <li>
-                                <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
-                                    <i class="ri-html5-fill text-orange-500 text-xl"></i> HTML
-                                </a>
-                            </li>
-                            <li>
-                                <div class="inline-flex items-center gap-2 hover:text-blue-500 transition cursor-pointer"><i class="ri-css3-fill text-blue-500 text-xl"></i> CSS</div>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">SCSS</a></li>
-                                    <li><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Bootstrap</a></li>
-                                    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Tailwind</a></li>
-                                    <li><a href="https://bulma.io/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Bulma</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-javascript-fill text-yellow-400 text-xl"></i> JavaScript
-                                </a>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Node.js</a></li>
-                                    <li><a href="https://www.electronjs.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Electron</a></li>
-                                    <li><a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Vue.js</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="https://sql.sh" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
-                                    <i class="ri-database-2-fill text-blue-600 text-xl"></i> SQL
-                                </a>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://mariadb.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">MariaDB</a></li>
-                                    <li><a href="https://www.mysql.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">MySQL</a></li>
-                                    <li><a href="https://www.postgresql.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">PostgreSQL</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <div class="inline-flex items-center gap-2 hover:text-blue-500 transition cursor-pointer"><i class="ri-code-s-slash-fill text-purple-500 text-xl"></i> PHP</div>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://www.slimframework.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">PHP Slim</a></li>
-                                    <li><a href="https://www.phpmyadmin.net/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">phpMyAdmin</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
-                                    <i class="ri-terminal-box-line text-yellow-500 text-xl"></i> Python
-                                </a>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://flask.palletsprojects.com" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Flask</a></li>
-                                    <li><a href="https://www.pygame.org" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Pygame</a></li>
-                                    <li><a href="https://discordpy.readthedocs.io" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">discord.py</a></li>
-                                    <li><a href="https://docs.pycord.dev" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Pycord</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="https://www.lua.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-code-fill text-blue-400 text-xl"></i> Lua
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 hover:text-blue-500 transition transform hover:scale-[1.02]">
-                                    <i class="ri-code-box-fill text-red-500 text-xl"></i> Java
-                                </a>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://hub.spigotmc.org/javadocs/spigot/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">SpigotMC</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-microsoft-fill text-purple-600 text-xl"></i> C#
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://flutter.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/flutter" alt="Flutter" class="w-5 h-5" loading="lazy"> Flutter
-                                </a>
-                                <ul class="list-disc pl-6 mt-1 space-y-1 text-gray-700 dark:text-gray-300">
-                                    <li><a href="https://dart.dev" target="_blank" rel="noopener noreferrer" class="hover:text-blue-500">Dart</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="https://soliditylang.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-code-s-slash-fill text-teal-500 text-xl"></i> Solidity
-                                </a>
-                            </li>
-                        </ul>
-                        
+        <hr class="my-10 border-gray-200 dark:border-gray-800">
+
+        <!-- ============ PROJETS ============ -->
+        <section id="projets">
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Projets</h2>
+
+            <div class="space-y-8">
+
+                <!-- Pourcentage RP -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">
+                            <a href="https://pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Pourcentage RP</a>
+                        </h3>
+                        <span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">2024 - 2026</span>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-3">IDE</h3>
-                        <ul class="list-none pl-0 space-y-2 text-gray-800 dark:text-gray-200">
-                            <li>
-                                <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-code-s-slash-fill text-blue-500 text-xl"></i> Visual Studio Code
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.eclipse.org/ide/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/eclipseide" alt="Eclipse" class="w-5 h-5" loading="lazy"> Eclipse
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://vscodium.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/vscodium" alt="VSCodium" class="w-5 h-5" loading="lazy"> VSCodium
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.cursor.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-code-s-slash-line text-lg"></i> Cursor
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://atom.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-code-box-fill text-blue-400 text-xl"></i> Atom
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.sublimetext.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/sublimetext" alt="Sublime Text" class="w-5 h-5" loading="lazy"> Sublime Text
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://visualstudio.microsoft.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-microsoft-fill text-purple-600 text-xl"></i> Visual Studio
-                                </a>
-                            </li>
-                        </ul>
-                        <h3 class="text-lg font-semibold mt-8 mb-3">Systèmes d'exploitation</h3>
-                        <ul class="list-none pl-0 space-y-2 text-gray-800 dark:text-gray-200">
-                            <li>
-                                <a href="https://www.microsoft.com/windows/windows-11" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-windows-fill text-blue-500 text-xl"></i> Windows 11
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.microsoft.com/windows-server" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-windows-fill text-blue-500 text-xl"></i> Windows Server
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.debian.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/debian" alt="Debian" class="w-5 h-5" loading="lazy"> Debian
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.kali.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/kalilinux" alt="Kali Linux" class="w-5 h-5" loading="lazy"> Kali Linux
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/raspberrypi" alt="Raspberry Pi OS" class="w-5 h-5" loading="lazy"> Raspberry Pi OS
-                                </a>
-                            </li>
-                        </ul>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Serveur FiveM Roleplay que j'ai créé après avoir été joueur pendant plus de 5 ans. Lancé début 2025, stoppé sur une V2 en août 2025, de retour en 2026.
+                    </p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Lua · Web · SQL</p>
+
+                    <div class="mt-4 ml-1 pl-4 border-l-2 border-gray-200 dark:border-gray-800 space-y-4">
+                        <!-- Pourcentage MDT -->
+                        <div>
+                            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+                                <h4 class="text-sm font-semibold">
+                                    <a href="https://github.com/xLaugh/mdt.pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Pourcentage MDT</a>
+                                </h4>
+                                <span class="inline-flex items-center rounded bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 text-[11px] font-medium text-gray-500 dark:text-gray-400">2025</span>
+                            </div>
+                            <p class="mt-0.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">MDT pour la Police de Pourcentage RP (Alpha, Beta) : enregistrement, casiers, gestion interne.</p>
+                            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Web</p>
+                        </div>
+
+                        <!-- Whitelist PourcentageRP -->
+                        <div>
+                            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+                                <h4 class="text-sm font-semibold">
+                                    <a href="https://whitelist.pourcentagerp.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Whitelist Pourcentage</a>
+                                </h4>
+                                <span class="inline-flex items-center rounded bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 text-[11px] font-medium text-gray-500 dark:text-gray-400">2025 - 2026</span>
+                            </div>
+                            <p class="mt-0.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Site web de whitelist pour mon serveur Pourcentage RP.</p>
+                            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Web</p>
+                        </div>
+
+                        <!-- Site web Pourcentage -->
+                        <div>
+                            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+                                <h4 class="text-sm font-semibold">
+                                    <a href="https://pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Site web</a>
+                                </h4>
+                                <span class="inline-flex items-center rounded bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 text-[11px] font-medium text-gray-500 dark:text-gray-400">2025 - 2026</span>
+                            </div>
+                            <p class="mt-0.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Site web de Pourcentage.</p>
+                            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Web</p>
+                        </div>
+
+                        <!-- Wiki Pourcentage -->
+                        <div>
+                            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+                                <h4 class="text-sm font-semibold">
+                                    <a href="https://wiki.pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Wiki Pourcentage</a>
+                                </h4>
+                                <span class="inline-flex items-center rounded bg-emerald-100 dark:bg-emerald-900/40 px-1.5 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">2026</span>
+                            </div>
+                            <p class="mt-0.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Wiki pour la communauté de Pourcentage.</p>
+                            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Docker · Vue.js · TS · PHP Slim</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-3">Logiciels</h3>
-                        <ul class="list-none pl-0 space-y-2 text-gray-800 dark:text-gray-200">
-                            <li>
-                                <a href="https://notepad-plus-plus.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/notepadplusplus" alt="Notepad++" class="w-5 h-5" loading="lazy"> Notepad++
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.vegascreativesoftware.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/vegas" alt="Vegas  Pro" class="w-5 h-5" loading="lazy"> Vegas Pro
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-image-edit-fill text-blue-400 text-xl"></i> Photoshop
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.microsoft.com/microsoft-365" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-file-word-2-fill text-blue-600 text-xl"></i> Suite Office
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/canva" alt="Canva" class="w-5 h-5" loading="lazy"> Canva
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://workspace.google.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-google-fill text-blue-500 text-xl"></i> Google Workspace
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/docker" alt="Docker" class="w-5 h-5" loading="lazy"> Docker
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/github" alt="GitHub Desktop" class="w-5 h-5" loading="lazy"> GitHub Desktop
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/git" alt="Git" class="w-5 h-5" loading="lazy"> Git
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://trello.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/trello" alt="Trello" class="w-5 h-5" loading="lazy"> Trello
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.postman.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/postman" alt="Postman" class="w-5 h-5" loading="lazy"> Postman
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.heidisql.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-database-2-fill text-blue-600 text-xl"></i> HeidiSQL
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/notion" alt="Notion" class="w-5 h-5" loading="lazy"> Notion
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/figma" alt="Figma" class="w-5 h-5" loading="lazy"> Figma
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://winscp.net/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-terminal-box-fill text-green-500 text-xl"></i> WinSCP
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://mobaxterm.mobatek.net/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <i class="ri-terminal-box-line text-lg"></i> MobaXterm
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 hover:text-blue-500 transition">
-                                    <img src="https://cdn.simpleicons.org/virtualbox" alt="VirtualBox" class="w-5 h-5" loading="lazy"> VirtualBox
-                                </a>
-                            </li>
-                        </ul>
+                </article>
+
+                <!-- LFScripts -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">
+                            <a href="https://github.com/orgs/lfScripts-com/repositories" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">LFScripts</a>
+                        </h3>
+                        <span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">2025 - 2026</span>
                     </div>
-                    
-                </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Boutique de scripts FiveM lancée avec le co-fondateur après l'arrêt de la V2 de Pourcentage. Vente des scripts existants et développement de nouveaux.
+                    </p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Lua · Web · SQL</p>
+                </article>
+
+                <!-- 22scripts -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">
+                            <a href="https://22scripts.com" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">22scripts</a>
+                        </h3>
+                        <span class="inline-flex items-center rounded-md bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">2026</span>
+                    </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Boutique de scripts FiveM lancée suite à l'arrêt de LFScripts.
+                    </p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Lua · Web · SQL</p>
+                </article>
+
+                <!-- Discord Bot -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">Discord Bot</h3>
+                        <span class="inline-flex items-center rounded-md bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">2025 - 2026</span>
+                    </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Bot Discord cross-serveur de modération, présent sur les communautés des streamers Byilhann, Nicotine, <span class="line-through">Aneyaris</span> et Helydia.
+                    </p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Python · Pycord</p>
+
+                    <div class="mt-4 ml-1 pl-4 border-l-2 border-gray-200 dark:border-gray-800 space-y-4">
+                        <!-- Événement d'Hiver sur Discord -->
+                        <div>
+                            <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
+                                <h4 class="text-sm font-semibold">
+                                    <a href="https://youtu.be/LTpkMsBa_SY" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Événement d'Hiver sur Discord</a>
+                                </h4>
+                                <span class="inline-flex items-center rounded bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 text-[11px] font-medium text-gray-500 dark:text-gray-400">2025</span>
+                            </div>
+                            <p class="mt-0.5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Événement saisonnier déployé sur le même bot (Byilhann, Nicotine, Aneyaris) : mécaniques dédiées, animations, distribution de rôles et récompenses automatisées.</p>
+                            <p class="mt-1 text-xs text-gray-400 dark:text-gray-500">Python · Pycord</p>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </section>
 
-        <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto">
-                <h2 class="text-3xl font-bold mb-12 text-center">Réalisations</h2>
+        <hr class="my-10 border-gray-200 dark:border-gray-800">
 
-                <h3 class="text-xl font-semibold mb-4">Réalisations principales</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
-                    <!-- Pourcentage RP -->
-                    <a href="https://pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="relative aspect-[16/9] bg-gray-200 dark:bg-gray-700">
-                            <img src="img/miniature/pourcentage.webp" alt="Pourcentage RP" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
-                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-500/90 text-white shadow">FiveM</span>
-                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 text-gray-800">Roleplay</span>
-                            </div>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <h3 class="text-lg font-semibold">Pourcentage RP</h3>
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-200">Lua</span>
-                            </div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                                Pourcentage est le serveur que j'ai crée, après avoir été joueur pendant plus de 5 ans de Roleplay. En 2024, je décide de lancer ce projet, qui verra le jour début 2025. Il se stoppera sur une version 2 en août 2025. Pour ensuite revenir en 2026.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Lua</span>
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Web</span>
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">SQL</span>
-                            </div>
-                        </div>
-                    </a>
+        <!-- ============ AUTRES PROJETS ============ -->
+        <section id="autres">
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-6">Autres projets</h2>
 
-                    <!-- LFScripts -->
-                    <a href="https://shop.lfscripts.com" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="relative aspect-[16/9] bg-gray-200 dark:bg-gray-700">
-                            <img src="img/miniature/lfscripts.webp" alt="LFScripts" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
-                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-500/90 text-white shadow">E-commerce</span>
-                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 text-gray-800">Scripts FiveM</span>
-                            </div>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <h3 class="text-lg font-semibold">LFScripts</h3>
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 dark:bg-purple-900/40 dark:text-purple-200">Web</span>
-                            </div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                                Après avoir arrêter la version 2 de Pourcentage, accompagné de du co-Fondateur, nous avons lancés notre boutique de scripts FiveM. Permettant de vendre les scripts réalisés pour Pourcentage, et d'en développer de nouveaux.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Lua</span>
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Web</span>
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">SQL</span>
-                            </div>
-                        </div>
-                    </a>
+            <div class="space-y-8">
 
-                    <!-- Discord Bot -->
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="relative aspect-[16/9] bg-gray-200 dark:bg-gray-700">
-                            <img src="img/miniature/discord.webp" alt="Discord Bot" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-90"></div>
-                            <div class="absolute top-3 left-3 flex flex-wrap gap-2">
-                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-emerald-500/90 text-white shadow">Modération</span>
-                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/90 text-gray-800">Discord</span>
-                            </div>
-                        </div>
-                        <div class="p-5 space-y-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <h3 class="text-lg font-semibold">Discord Bot</h3>
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200">Python</span>
-                            </div>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                                J'ai développé un bot Discord présent aux serveurs communautaires des streamers suivants : Byilhann, Nicotine, Aneyaris et Helydia. Le bot est cross-serveur et utilisé pour la modération.
-                            </p>
-                            <div class="flex flex-wrap gap-2 text-xs">
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Python</span>
-                                <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Pycord</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <h3 class="text-xl font-semibold mb-3">Autres réalisations</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch">
-                    <li class="h-full">
-                        <a href="https://github.com/xLaugh/BipBipFood28" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">BipBipFood28</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Application mobile en webview pour calcul des menus (BipBipFood28).</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="https://jeffwars.net" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">JeffWars</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Site Web réalisé pour le serveur Minecraft d'un ami</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="https://github.com/xLaugh/mdt.pourcentagerp.fr" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">Pourcentage MDT</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">MDT pour la Police de mon serveur Pourcentage RP (enregistrement, casiers, gestion interne).</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="https://whitelist.pourcentagerp.fr/" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">Whitelist PourcentageRP</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Site web de Whitelist pour mon serveur Pourcentage RP</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">Web</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">CookedGame</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Serveur Minecraft Survie orienté sur la cuisine, avec crafts et items personnalisés.</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">Java</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">Bel Air RP</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Développement d'un serveur FiveM pour un client</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">FiveM</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="https://github.com/xLaugh/Jump" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">Plugin Parcours (Minecraft)</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Développement d'un plugin de Parcours pour WonderGames</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">Java</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="h-full">
-                        <a href="https://hurricanerp.fr/" target="_blank" rel="noopener noreferrer" class="block h-full min-h-[96px] bg-white dark:bg-gray-900 rounded-lg p-2 shadow-sm hover:shadow">
-                            <div class="flex items-start justify-between">
-                                <div>
-                                    <h4 class="font-semibold text-sm">Hurricane RP</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400">Aide aux devs pour Territoires/Crew basé sur lfTerritory (LFScripts)</p>
-                                </div>
-                                <span class="px-2 py-0.5 text-[10px] rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-300">FiveM</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-
-                <div class="mt-12">
-                    <h3 class="text-xl font-semibold mb-4">Dernière réalisation</h3>
-                    <div class="grid gap-6 lg:grid-cols-2 items-start">
-                        <div class="group relative block overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-lg border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
-                            <div class="p-5 space-y-3">
-                                <div class="flex items-start justify-between gap-3">
-                                    <h4 class="text-lg font-semibold">Événement d'Hiver sur Discord</h4>
-                                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200">Discord</span>
-                                </div>
-                                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                                    Événement saisonnier déployé sur le même bot pour les serveurs de Byilhann,
-                                    Nicotine et Aneyraris : mécaniques dédiées, animations, distribution de rôles
-                                    et récompenses automatisées.
-                                </p>
-                                <div class="flex flex-wrap gap-2 text-xs">
-                                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Python</span>
-                                    <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700">Pycord</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg bg-black/60 aspect-video">
-                                <iframe class="absolute inset-0 w-full h-full"
-                                        src="https://www.youtube-nocookie.com/embed/LTpkMsBa_SY?si=z_ROhLpAYlr6ba3v"
-                                        title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerpolicy="strict-origin-when-cross-origin"
-                                        allowfullscreen></iframe>
-                            </div>
-                        </div>
+                <!-- JeffWars -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">
+                            <a href="https://jeffwars.net" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">JeffWars</a>
+                        </h3>
+                        <span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">2023</span>
                     </div>
-                </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">Site web réalisé pour le serveur Minecraft d'un ami.</p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Web</p>
+                </article>
+
+                <!-- CookedGame -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">CookedGame</h3>
+                        <span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">2025</span>
+                    </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">Serveur Minecraft Survie orienté cuisine, avec crafts et items personnalisés.</p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">Java</p>
+                </article>
+
+                <!-- Bel Air RP -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">Bel Air RP</h3>
+                        <span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">2025</span>
+                    </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">Développement d'un serveur FiveM pour un client.</p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">FiveM</p>
+                </article>
+
+                <!-- Hurricane RP -->
+                <article>
+                    <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1">
+                        <h3 class="font-semibold">
+                            <a href="https://hurricanerp.fr/" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:text-blue-400 transition-colors">Hurricane RP</a>
+                        </h3>
+                        <span class="inline-flex items-center rounded-md bg-gray-100 dark:bg-gray-800 px-2 py-0.5 text-xs font-medium text-gray-500 dark:text-gray-400">2025</span>
+                    </div>
+                    <p class="mt-1 text-gray-600 dark:text-gray-400 leading-relaxed">Aide aux devs pour Territoires/Crew basé sur lfTerritory (LFScripts).</p>
+                    <p class="mt-2 text-sm text-gray-400 dark:text-gray-500">FiveM</p>
+                </article>
+
             </div>
         </section>
+
+        <hr class="my-10 border-gray-200 dark:border-gray-800">
+
+        <footer class="text-sm text-gray-400 dark:text-gray-500">
+            &copy; 2024-2026 Laugh. Tous droits réservés.
+        </footer>
+
     </main>
-
-    <footer class="py-8 px-4 bg-white dark:bg-gray-900">
-        <div class="container mx-auto">
-            <div class="flex flex-col items-center justify-center space-y-4">
-                <a href="#hero" class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                    Laugh
-                </a>
-
-                <div class="flex space-x-6">
-                    <a href="https://github.com/xLaugh/" target="_blank" rel="noopener noreferrer" 
-                       class="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
-                        <i class="ri-github-fill text-xl"></i>
-                    </a>
-                    <a href="https://discord.gg/6wdkx6X" target="_blank" rel="noopener noreferrer" 
-                       class="text-gray-600 dark:text-gray-400 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">
-                        <i class="ri-discord-fill text-xl"></i>
-                    </a>
-                </div>
-
-                <p class="text-sm text-gray-600 dark:text-gray-400">
-                    &copy; 2024-2026 Laugh. Tous droits réservés.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    
 </body>
 </html>
